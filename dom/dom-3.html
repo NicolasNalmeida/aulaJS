@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios de Manipulação do DOM</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body
+		{
+			font-family: arial;
+		}
+
+		.container
+		{
+			width: 1170px;
+			margin: 0 auto;
+		}
+
+		.title-main
+		{
+			text-align: center;
+			background-color: #dcdcdc;
+			padding: 10px;
+			border-bottom: 1px solid;
+		}
+
+		.section-main
+		{
+			background-color: #eee;
+		}
+
+		.content
+		{
+			padding: 15px;
+		}
+
+		.input-name
+		{
+			border-radius: 2px;
+			padding: 10px;
+			border: 1px solid #dcdcdc;
+		}
+
+		.btn
+		{
+			background-color: #333;
+			transition: .3s;
+			padding: 9px;
+			text-decoration: none;
+			color: #fff;
+		}
+
+		.btn:hover
+		{
+			background-color: #666;
+		}
+	</style>
+</head>
+<body>
+<header class="container">
+	<h1 class="title-main">Aula de Manipulação do DOM</h1>
+</header>
+<section class="container section-main">
+	<div class="content">
+		<div class="content-name">
+			<input class="input-name" type="text" name="nome" placeholder="Digite o Nome">
+			<a class="btn" href="javascript:;">Enviar</a>
+		</div>
+		<div class="msg">
+		</div>
+	</div>
+</section>
+<section class="container section-main">
+	<div class="content">
+		<h1>Título 1</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+	</div>
+</section>
+<section class="container section-main">
+	<div class="content">
+		<h1>Título 2</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+	</div>
+</section>
+<script>
+	(function(){
+		'use strict'
+
+		function bemVindo()
+		{
+			var btnEnviar = document.querySelector('.btn');
+			var inputVal = document.querySelector('.input-name');
+			var contentMsg = document.querySelector('.msg');
+			btnEnviar.onclick = function()
+			{
+				if(inputVal.value == "")
+				{
+					contentMsg.innerHTML = "<p>Vazio, digite um nome.</p>";
+				}
+				else
+				{
+					contentMsg.innerHTML = "<p>Seja Bem-vindo, <b>" + inputVal.value + "</b></p>";
+				}
+			};
+		}
+
+		bemVindo();
+	})()
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcular Média</title>
+    <meta charset="utf-8">
+    <style>
+    	.container
+    	{
+    		width: 1170px;
+    		margin: 0 auto;
+    	}
+
+    	.table
+    	{
+    		width: 100%;
+    		border-bottom: 3px solid #333;
+    	}
+
+		.thead th,
+		.tbody td
+		{
+			border-bottom: 1px solid #dcdcdc;
+			padding: 10px;
+		}
+
+    </style>
+</head>
+<body>
+	<section class="container">
+		<table class="table">
+	     	<thead class="thead">
+	     		<tr>
+		     		<th>Nome</th>
+		     		<th>Nota 1</th>
+		     		<th>Nota 2</th>
+		     		<th>Nota 3</th>
+		     		<th>Nota 4</th>
+	     		</tr>
+	     	</thead>
+	     	<tbody class="tbody">
+	     		<tr>
+	     			<td>Nicolas</td>
+		     		<td>10</td>
+		     		<td>5</td>
+		     		<td>7</td>
+		     		<td>9</td>
+	     		</tr>
+	     		<tr>
+	     			<td>Marcos</td>
+		     		<td>10</td>
+		     		<td>9</td>
+		     		<td>8</td>
+		     		<td>6</td>
+	     		</tr>
+	     		<tr>
+	     			<td>Fulano</td>
+		     		<td>6</td>
+		     		<td>7</td>
+		     		<td>8</td>
+		     		<td>9</td>
+	     		</tr>
+	     	</tbody>
+	    </table>
+	</section>
+
+	<script>
+		(function(){
+			'use strict';
+			function calcMedia()
+			{
+				var $table = document.querySelectorAll('.tbody tr');
+				var cont;
+				for (cont in $table) {
+					console.log($table[cont]);
+				}
+			}
+
+			calcMedia();
+		})();
+	</script>
+</body>
+</html>

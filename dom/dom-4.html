@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios de Manipulação de DOM</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<input class="txtNome" type="text" name="nome">
+	<script>
+		(function(){
+			function nomeSobrenome()
+			{
+				var nome = "Nicolas";
+				var sobrenome = " de Almeida";
+				var textNome = document.querySelector('.txtNome');
+				textNome.setAttribute('readonly', true);
+				textNome.value = nome + sobrenome;
+			}
+
+			nomeSobrenome();
+		})();
+	</script>
+</body>
+</html>
