@@ -6,7 +6,51 @@
 </head>
 <body>
 <script>
-	
+	(function(){
+		'use strict';
+		function calcImc(massa, altura)
+		{
+			var imc = massa / (Math.pow(altura, 2));
+			return imc;
+		}
+
+		function resultImc()
+		{
+			var imcRe = calcImc(120, 1.80);
+			
+			if(imcRe < 17)
+			{
+				console.log(imcRe.toFixed(2) + " Muito abaixo do peso.");
+			}
+			else if(imcRe >= 17 && imcRe < 18.5)
+			{
+				console.log(imcRe.toFixed(2) + " Abaixo do peso.");
+			}
+			else if(imcRe >= 18.5 && imcRe < 25)
+			{
+				console.log(imcRe.toFixed(2) + " Peso normal.");
+			}
+			else if(imcRe >= 25 && imcRe < 30)
+			{
+				console.log(imcRe.toFixed(2) + " Acima do peso.");
+			}
+			else if(imcRe >= 30 && imcRe < 35)
+			{
+				console.log(imcRe.toFixed(2) + " Obesidade grau I.");
+			}
+			else if(imcRe >= 35 && imcRe <= 40)
+			{
+				console.log(imcRe.toFixed(2) + " Obesidade grau II.");
+			}
+			else if(imcRe > 40)
+			{
+				console.log(imcRe.toFixed(2) + " Obesidade grau III.");
+			}
+		}
+
+		resultImc();
+
+	})()
 </script>
 </body>
 </html>

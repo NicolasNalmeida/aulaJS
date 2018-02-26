@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicios de DOM</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.bg-color
+		{
+			background-color: red;
+		}
+
+		.btn
+		{
+			text-decoration: none;
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			transition: .3s;
+		}
+
+		.btn:hover
+		{
+			background-color: #6d6d6d;
+		}
+	</style>
+</head>
+<body>
+	<section class="section-a" id="sectionA">
+		<h1 class="title-main">Titulo 1</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+
+		<h2>Subtitulo</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.</p>
+	</section>
+
+	<section class="section-b" id="sectionB">
+		<h1 class="title-main" id="titleMain">Titulo 2</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</section>
+
+	<section class="section-color">
+		<a class="btn" href="javascript:;">Teste de BG</a>
+	</section>
+</body>
+<script>
+	(function(){
+		'use strict';
+
+		function getDOM()
+		{
+			var getTAG = document.querySelector('.title-main');
+
+			console.log(getTAG.textContent);
+		}
+
+		function clickTest()
+		{
+			var changeBG = document.querySelector('.btn');
+			var bgColor = document.querySelector('.section-b');
+
+			changeBG.onclick = function()
+			{
+				if(bgColor.classList.contains('bg-color'))
+				{
+					bgColor.classList.remove('bg-color');
+				}
+				else if(!bgColor.classList.contains('bg-color'))
+				{
+					bgColor.classList.add('bg-color');
+				}
+			};
+		}
+
+		clickTest();
+		// getDOM();
+	})()
+</script>
+</html>
