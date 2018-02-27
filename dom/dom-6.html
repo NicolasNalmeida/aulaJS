@@ -49,34 +49,34 @@
 	     	<tbody class="tbody">
 	     		<tr class="aluno">
 	     			<td class="nome">Nicolas</td>
-		     		<td class="notas">10</td>
-		     		<td class="notas">5</td>
-		     		<td class="notas">7</td>
-		     		<td class="notas">9</td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
 		     		<td class="media"></td>
 	     		</tr>
 	     		<tr class="aluno">
 	     			<td class="nome">Marcos</td>
-		     		<td class="notas">10</td>
-		     		<td class="notas">9</td>
-		     		<td class="notas">8</td>
-		     		<td class="notas">6</td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
 		     		<td class="media"></td>
 	     		</tr>
 	     		<tr class="aluno">
 	     			<td class="nome">Fulano</td>
-		     		<td class="notas">6</td>
-		     		<td class="notas">7</td>
-		     		<td class="notas">8</td>
-		     		<td class="notas">9</td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
 		     		<td class="media"></td>
 	     		</tr>
 	     		<tr class="aluno">
 	     			<td class="nome">Ciclano</td>
-		     		<td class="notas">3</td>
-		     		<td class="notas">2</td>
-		     		<td class="notas">5</td>
-		     		<td class="notas">10</td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
+		     		<td><input class="notas" type="number" name="nota" value=""></td>
 		     		<td class="media"></td>
 	     		</tr>
 	     	</tbody>
@@ -85,25 +85,46 @@
 	<script>
 		(function(){
 			'use strict';
+
+			function onKeyUp(element, callback)
+			{
+				for(var cont = 0; cont < element.length; cont++)
+				{
+					element[cont].onkeyup = function()
+					{
+						callback();
+					}
+				}
+			}
+
 			function calcMedia()
 			{
 				var $alunoLength = document.querySelectorAll('.aluno').length;
 				var $aluno = document.querySelectorAll('.aluno');
 				var $notasLength = document.querySelectorAll('.notas').length;
 				var media = 0;
+				var $inputNotas = document.querySelectorAll('.notas');
+				
+				onKeyUp($inputNotas, function(){
+					var valor = [];
+					for(i = 0; i < $inputNotas.length; i++)
+					{
+						valor.push($inputNotas[i].value);
+					}
+				});
 
 				for(var i = 0; i < $alunoLength; i++)
 				{
-					// console.log($aluno[i]);
 					for(var j = 0; j < 4; j++)
 					{
-						media += parseFloat(($aluno[i]).querySelectorAll('.notas')[j].textContent);
+						media += parseFloat(($aluno[i]).querySelectorAll('.notas')[j].value);
 					}
 
 					media = media / 4;
 					document.querySelectorAll('.media')[i].innerHTML = media;
 					media = 0;
 				}
+
 			}
 			calcMedia();
 		})();
