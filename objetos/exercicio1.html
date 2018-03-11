@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios de Objetos</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		(function(){
+			'use strict';
+
+			// objeto caneta
+			var caneta = {
+				cor: 'red',
+				mudarCor: function(cor)
+				{
+					this.cor = cor;
+					console.log(this.cor);
+				}
+			}
+
+			caneta.mudarCor('blue');
+		})();
+	</script>
+</body>
+</html>

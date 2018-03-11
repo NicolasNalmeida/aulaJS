@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios de Objetos</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		(function(){
+			'use strict';
+
+			// CONSTRUTOR
+			// RECEBE OS VALORES POR PARÂMETRO,
+			// CASO NÃO EXISTA NENHUMA PARÂMETRO ELE RECEBE UM VALOR DEFAULT
+			function Caneta(preco, cor)
+			{
+				this.preco = preco || 1.50; // ATRIBUTOS PÚBLICOS
+				var color = cor || 'black'; // ATRIBUTOS PRIVADOS
+				this.mudarCor = function(cor)
+				{
+					color = cor;
+				}
+
+				this.getColor = function()	// APESAR DE SER UM ATRIBUTO PRIVADO, EU CONSIGO RETORNAR O VALOR DELA APENAS
+				{
+					return color;
+				}
+			}
+
+			// PASSA OS VALORES POR PARÂMETRO
+			var canetaAzul = new Caneta(2.50, 'blue');
+			console.log(canetaAzul);
+			console.log(canetaAzul.getColor());
+		})();
+	</script>
+</body>
+</html>
