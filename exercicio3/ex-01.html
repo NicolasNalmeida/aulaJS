@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validação de Login</title>
+    <style>
+        .form-group
+        {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="#" class="form-content" method="POST">
+        <div class="form-group"><input type="text" name="usuario" id="txtUser" class="input-value" placeholder="Usuário"></div>
+        <div class="form-group"><input type="password" name="senha" id="txtPass" class="input-value" placeholder="Senha"></div>
+        <div class="form-group"><button type="submit" class="btn-enviar">Entrar</button></div>
+    </form>
+
+    <script>
+        (function(){
+
+            'use strict';
+
+            var formEnviar = document.querySelector('.form-content');
+            var inputVal = document.querySelectorAll('.input-value');
+
+            formEnviar.addEventListener('submit', function(e){
+
+                for(var i = 0; i < inputVal.length; i++)
+                {
+                    if(inputVal[i].value === '' || inputVal[i].value === null)
+                    {
+                        alert('vazio');
+                        e.preventDefault();
+                    }
+                }
+            })
+
+        })()
+    </script>
+</body>
+</html>

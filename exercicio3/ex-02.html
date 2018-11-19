@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TextArea</title>
+</head>
+<body>
+    <textarea class="text-content" cols="50" rows="10" maxlength="50"></textarea>
+    <div>
+        <p>Caracteres: <span class="count">50</span></p>
+    </div>
+
+    <script>
+        (function(){
+
+            'use strict';
+            var textArea = document.querySelector('.text-content');
+            var count = document.querySelector('.count');
+            var total = textArea.getAttribute('maxlength');
+            console.log(total);
+            
+
+            textArea.addEventListener('keyup', function(){
+                count.textContent = total - this.value.length;
+            });
+
+        })()
+    </script>
+</body>
+</html>
