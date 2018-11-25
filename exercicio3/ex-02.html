@@ -7,9 +7,9 @@
     <title>TextArea</title>
 </head>
 <body>
-    <textarea class="text-content" cols="50" rows="10" maxlength="50"></textarea>
+    <textarea class="text-content" cols="50" rows="10" maxlength="100"></textarea>
     <div>
-        <p>Caracteres: <span class="count">50</span></p>
+        <p>Caracteres: <span class="count">100</span></p>
     </div>
 
     <script>
@@ -18,12 +18,15 @@
             'use strict';
             var textArea = document.querySelector('.text-content');
             var count = document.querySelector('.count');
-            var total = textArea.getAttribute('maxlength');
-            console.log(total);
-            
+            var total = textArea.getAttribute('maxlength');            
 
-            textArea.addEventListener('keyup', function(){
+            textArea.addEventListener('input', function(){
                 count.textContent = total - this.value.length;
+
+                if(count.textContent == '10')
+                {
+                    alert('Faltam 10 caractéres');
+                }
             });
 
         })()
