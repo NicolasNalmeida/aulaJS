@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    ul
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .list-item
+    {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #9b3e3e;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .btn
+    {
+        border: none;
+        background-color: #333;
+        padding: 10px 20px;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover
+    {
+        background-color: rgb(88, 88, 88);
+    }
+
+    .complete
+    {
+        border: 1px solid #36995c;
+        background-color: rgba(128, 253, 176, 0.246);
+    }
+
+    .inp-text
+    {
+        padding: 5px;
+        width: 100%;
+        margin-right: 20px;
+    }
+
+</style>
+<body>
+    <h1>Exercícios 1234 - 24 combinações</h1>
+    <ul class="list">
+        <li class="list-item"><input class="inp-text" type="text" value="1234"> <input type="checkbox" class="check-item" data-check="1"></li>
+        <li class="list-item"><input class="inp-text" type="text" value="4123"> <input type="checkbox" class="check-item" data-check="2"></li>
+        <li class="list-item"><input class="inp-text" type="text" value="2314"> <input type="checkbox" class="check-item" data-check="3"></li>
+        <li class="list-item"><input class="inp-text" type="text" value=""> <input type="checkbox" class="check-item" data-check="3"></li>
+    </ul>
+    <div class="content-btn">
+        <button class="btn">Adicionar</button>
+    </div>
+
+    <script>
+        (function check(){
+            'use strict';
+            
+            var check = document.querySelectorAll('.check-item');
+
+            for(var i = 0; i < check.length; i++)
+            {
+                check[i].addEventListener('click', function(e){
+                    e.target.parentElement.classList.toggle('complete');
+                });
+            }
+        })();
+
+        (function addItem(){
+            'use strict';
+
+            var addBtn = document.querySelector('.btn');
+            var list = document.querySelector('.list');
+            
+            addBtn.addEventListener('click', function(){
+                console.log(list.lastChild);
+            });
+        })();
+    </script>
+</body>
+</html>
