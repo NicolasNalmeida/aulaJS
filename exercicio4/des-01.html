@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio</title>
+</head>
+<body>
+
+    <p class="paragraph">Lorem ipsum javascript dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+
+    <script>
+        (function(){
+            var paragraph = document.querySelectorAll('.paragraph');
+            
+            paragraph.forEach(el => 
+            {
+                el.innerHTML = formatParagraph(el.innerHTML);                
+            });
+
+            function formatParagraph(text)
+            {
+                var arr = text.split(' ');                
+
+                if(arr.length > 10)
+                {
+                    return arr.slice(0, 10).join(' ') + '...';                    
+                }
+
+                return text;
+            }
+            
+        })();
+    </script>
+</body>
+</html>

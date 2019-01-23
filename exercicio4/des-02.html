@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio</title>
+    <style>
+        .destaque
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="paragraph">Lorem ipsum Javascript dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur Javascript adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+    <p class="paragraph">Lorem ipsum dolor, sit amet consectetur Javascript adipisicing elit. Quos, aliquam at! Deserunt saepe unde nobis quod temporibus ea. Iste exercitationem soluta, pariatur cupiditate rem odit quas sapiente obcaecati consectetur totam.</p>
+
+    <script>
+        (function(){
+            var paragraph = document.querySelectorAll('.paragraph');
+            
+            paragraph.forEach(el => 
+            {
+                var temJS = el.innerHTML.toLowerCase().indexOf('javascript') >= 0;
+                el.className = temJS ? 'destaque' : ''; 
+            });            
+        })();
+    </script>
+</body>
+</html>
